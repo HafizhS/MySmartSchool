@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:text="MySmartSchool"
+                  android:textSize="20sp"
+                  android:layout_alignParentStart="true"
+                  android:layout_marginStart="15dp"
+                  android:gravity="center"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+        <ImageButton android:id="@+id/home_btnProfile"
+                     android:layout_width="30dp" android:layout_height="30dp" android:layout_centerVertical="true"
+                     android:background="@android:color/transparent"
+                     android:src="@drawable/ic_account_circle_black_24dp"
+                     android:layout_toLeftOf="@id/home_btnMyclass"/>
+        <Button android:id="@+id/home_btnMyclass"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:text="My Class"
+                android:textAllCaps="false"
+                style="@style/ButtonMyClass"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1.5">
+        <ImageView android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:src="@drawable/news1">
+        </ImageView>
+        <TextView android:layout_width="match_parent" android:layout_height="55dp" android:background="#A6000000"
+                  android:layout_alignParentBottom="true"
+                  android:text="Karateka Muda, Riksa Paradila Pasa Juara 3 Pada Kejuaraan Nasional UPI Cup 2018"
+                  android:textColor="#fff" android:gravity="center"/>
+    </RelativeLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:background="@android:color/transparent">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Tugas Terkini :"
+                  android:paddingLeft="15dp"
+                  android:paddingTop="2dp"
+                  android:paddingBottom="5dp"
+                  android:textStyle="bold"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                  android:background="@android:color/transparent"
+                  android:textSize="13sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.3"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/fragment_tugas_list_item"/>
+    </LinearLayout>
+
+</LinearLayout>
